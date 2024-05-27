@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+
+{%block content%}
+<h1>Refugio</h1>
+<p>En esta sección se mostrará información sobre el refugio de perros</p>
+
+<h2>Listar Perros</h2>
+{% for perro in perros %}
+    <a href="{% url 'perro_detail' perro.id%}">
+        <p>{{ perro.nombre }}</p>
+    </a>
+        <p>{{ perro.raza }}</p>
+        <p>{{ perro.edad }}</p>
+        <p>{{ perro.descripcion }}</p>
+    
+{% endfor %}
+
+{%endblock%}

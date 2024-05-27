@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>{{perro.nombre}}</h1>
+
+    {{error}}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>
+            Actualizar
+        </button>
+    </form>
+
+<form action="{% url 'perro_delete' perro.id%}">
+    <button>
+        Eliminar
+    </button>
+</form>
+
+{%endblock%}
